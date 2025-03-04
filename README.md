@@ -1,71 +1,56 @@
-# osTicket Docker Setup
+# osTicket Implementation Project
 
-## Overview
-This repository contains a **Docker-based setup** for osTicket, a powerful open-source ticketing system. The setup includes:
-- **MariaDB (MySQL)** as the database.
-- **osTicket** running in a Docker container.
-- **Persistent storage** for database and ticket data.
+## Project Summary
 
-## Technologies Used
-- Docker
-- Docker Compose
-- osTicket
-- MariaDB (MySQL)
+### Description
+This project is a **full implementation of osTicket**, an open-source ticketing system for IT support and customer service. The project provides a step-by-step guide on installing, configuring, and customizing osTicket in a **Windows Server** environment.
 
-## Getting Started
-### Prerequisites
-Make sure you have **Docker** and **Docker Compose** installed:
-- [Docker Installation Guide](https://docs.docker.com/get-docker/)
-- [Docker Compose Installation](https://docs.docker.com/compose/install/)
+### Technologies & Environments Used
+- **Languages:** PHP, MySQL
+- **Environments:** Windows Server 2022, Ubuntu (for MySQL), Windows 10 (client-side)
+- **Applications & Services:**
+  - osTicket
+  - XAMPP (for Apache & MySQL)
+  - Active Directory (for user authentication)
+  - Azure (optional VM deployment)
 
-### Installation
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/JosueCorralPro/osticket-setup.git
-   cd osticket-setup
-   ```
+## Installation & Configuration
 
-2. **Start osTicket using Docker Compose:**
-   ```bash
-   docker-compose up -d
-   ```
+### 1. Setting Up Windows Server & Ubuntu
+- Install Windows Server 2022
+- Set up an Ubuntu machine for database hosting (MySQL)
+- Configure network settings for communication between machines
 
-3. **Access osTicket in your browser:**
-   ```
-   http://localhost:8080
-   ```
+### 2. Installing Required Software
+- Install XAMPP (Apache, MySQL, PHP) on Windows Server
+- Set up osTicket in XAMPP’s **htdocs** folder
+- Configure **PHP.ini** settings (e.g., enabling extensions)
 
-### Database Configuration
-During the osTicket installation, use these database credentials:
-- **Database Host:** `db`
-- **Database Name:** `osticket`
-- **Username:** `osticket_user`
-- **Password:** `osticket_pass`
+### 3. Database Setup
+- Create a **MySQL database** for osTicket
+- Assign a user with appropriate permissions
+- Modify osTicket configuration to connect to the database
 
-### Stopping the Containers
-To stop the osTicket setup:
-```bash
-docker-compose down
-```
+### 4. osTicket Configuration
+- Install osTicket through the web setup
+- Configure ticket categories, SLA, and user roles
+- Enable email piping for automated ticket creation
 
-## Real-World osTicket Usage
-After setting up osTicket using Docker, I explored its features and functionalities, including:
-- **Creating and Managing Support Tickets**: Testing ticket creation, assignment, and status updates.
-- **Configuring Email Integration**: Connecting osTicket to an email server for automated ticket creation.
-- **Customizing Helpdesk Settings**: Modifying SLA policies, user roles, and canned responses.
-- **User Management**: Adding agents and end-users with different permission levels.
-- **Testing System Performance**: Running load tests to ensure smooth operation under heavy usage.
-- **Backup and Restore**: Implementing strategies for database and file backups to prevent data loss.
+### 5. Active Directory Integration
+- Connect osTicket to **Active Directory (AD)** for user authentication
+- Configure LDAP settings and test authentication
 
-## Future Improvements
-- Add SSL for secure connections
-- Automate email configurations
-- Deploy on a cloud service
-- Enhance documentation with troubleshooting tips
+### 6. Customization & Automation
+- Modify UI theme for branding
+- Set up **automated ticket assignments**
+- Implement custom email notifications
 
-## Contributing
-Feel free to fork this repository and submit pull requests!
+## Demonstration
 
-## License
-This project is open-source under the MIT License.
+### Screenshots & Video Walkthrough
+- Installation process with screenshots
+- Demonstration of ticket creation & assignment
+- AD user login demonstration
 
+## Conclusion
+This project showcases a **fully functional osTicket help desk** that integrates with Active Directory and MySQL for a robust IT support system. It provides a **scalable** and **efficient** ticketing solution for enterprises.
